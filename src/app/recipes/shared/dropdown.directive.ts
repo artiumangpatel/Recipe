@@ -6,7 +6,7 @@ import { Event } from '@angular/router';
 })
 export class DropdownDirective {
   @HostBinding('class.open')isOpen=false;
-  @HostListener('click')toggle(eventData:Event){
+  @HostListener('click')toggleOpen(){
     this.isOpen=!this.isOpen;
     console.log(this.isOpen);
   }

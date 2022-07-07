@@ -17,13 +17,27 @@
                 Manage Recipe<span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li> <a class="dropdown-item" href="#">To Shopping List</a></li>
+            <li> <a class="dropdown-item" (click)="onAddToShoppingList()"style="cursor:pointer;">To Shopping List</a></li>
             <li><a class="dropdown-item " href="#">Edit Recipe</a></li>
             <li><a class="dropdown-item " href="#">Delete Recipe</a></li>
         </ul>
     </div>
 </div>
 
+
+<div class="row ">
+    <div class="col-xs-12 ">
+        <h5>Description</h5>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-xs-12 ">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingrediants of recipe.ingredients">
+                {{ingrediants.name}}-{{ingrediants.amount}}</li>
+        </ul>
+    </div>
+</div>
 
 <!-- <div class="row ">
     <div class="col ">
@@ -47,17 +61,3 @@
     </div>
 </div>
 </div>-->
-
-<div class="row ">
-    <div class="col-xs-12 ">
-        <h5>Description</h5>
-    </div>
-</div>
-<div class="row ">
-    <div class="col-xs-12 ">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let ingrediants of recipe.ingrediants">
-                {{ingrediants.name}}-{{ingrediants.amount}}</li>
-        </ul>
-    </div>
-</div>

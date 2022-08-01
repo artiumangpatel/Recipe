@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import{Recipe} from '../recipe.model';
 @Component({
@@ -10,7 +11,9 @@ export class RecipeListComponent implements OnInit {
 
   // @Output() recipeWasSelected = new EventEmitter<Recipe>();
   
-  constructor(private recipeService:RecipeService) { }
+  constructor(private recipeService:RecipeService,
+    private router:Router,
+    private route:ActivatedRoute) { }
   
   recipes:Recipe[]=[];          //use blank array for store
 
@@ -26,6 +29,9 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipes();
   }
 
+  onNewRecipe(){
+ this.router.navigate(['new'],{relativeTo:this.route});
+  }
   // onRecipeSelected(recipe:Recipe)
   // {
   //   this.recipeWasSelected.emit(recipe);

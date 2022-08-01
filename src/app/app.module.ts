@@ -21,11 +21,11 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     AppComponent,
     HeaderComponent,
     RecipesComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent,
     DropdownDirective,
     RecipesStartComponent,
     RecipeEditComponent
@@ -33,6 +33,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 
   imports: [
       BrowserModule,
+      FormsModule,
       NgbModule,
       AppRoutingModule
    ],

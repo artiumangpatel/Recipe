@@ -6,8 +6,8 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipesComponent } from './recipes/recipes.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 
 const appRoutes:Routes=[
   {path:'', redirectTo:'/recipes',pathMatch:'full'},
@@ -16,13 +16,10 @@ const appRoutes:Routes=[
     {path:'new',component:RecipeEditComponent},
     {path:':id',component:RecipeDetailComponent},
     {path:':id/edit',component:RecipeEditComponent},
-   // {path:'recipe-list',component:RecipeListComponent,children:[
-   //   {path:'recipe-item',component:RecipeItemComponent},
-   // ]},
+   
   ]},
-  {path:'shopping-list',component:ShoppingListComponent,children:[
-    {path:'shopping-edit',component:ShoppingEditComponent},
-  ]},
+  {path:'shopping-list',component:ShoppingListComponent},
+
   //{path:'recipes',component:RecipesComponent},
  // {path:'recipes',component:RecipesComponent},
 ];

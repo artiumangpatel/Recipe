@@ -7,21 +7,25 @@ import { Ingredients } from '../recipes/shared/ingredients.model';
 })
 export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredients[]>();
+  startedEditing = new Subject<number>();
   constructor() { }
   private ingredients: Ingredients[] = [
-    new Ingredients('Apples',50),
-    new Ingredients('Tomato',40)
+    new Ingredients('Apples', 50),
+    new Ingredients('Tomato', 40)
   ];
-  getIngredients(){
+  getIngredients() {
     return this.ingredients.slice();
   }
+  getIngredient(index: number) {
+    return this.ingredients[index];
+  }
 
-  addIngredient(ingredients:Ingredients){
+  addIngredient(ingredients: Ingredients) {
     this.ingredients.push(ingredients);
-   // console.log("ingredients in shopping list"+this.ingredients);
+    // console.log("ingredients in shopping list"+this.ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
-  addIngredients(ingredients:Ingredients[]){
+  addIngredients(ingredients: Ingredients[]) {
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
   }

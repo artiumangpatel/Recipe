@@ -24,6 +24,12 @@ export class ShoppingListService {
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
+  deleteIngredient(index: number) {
+    this.ingredients.splice(index, 1);
+    this.ingredientsChanged.next(this.ingredients.slice());
+
+  }
+
   addIngredient(ingredients: Ingredients) {
     this.ingredients.push(ingredients);
     // console.log("ingredients in shopping list"+this.ingredients);
